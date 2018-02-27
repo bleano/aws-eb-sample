@@ -12,7 +12,11 @@
 	<filter>
   		<filter-name>XRayServletFilter</filter-name>
   		<filter-class>com.amazonaws.xray.javax.servlet.AWSXRayServletFilter</filter-class>
-	</filter>
+	  	<init-param>
+    		<param-name>fixedName</param-name>
+    		<param-value>MyApp</param-value>
+  		</init-param>
+  		</filter>
 	<filter-mapping>
   		<filter-name>XRayServletFilter</filter-name>
   		<url-pattern>*</url-pattern>
