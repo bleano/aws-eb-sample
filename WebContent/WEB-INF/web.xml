@@ -35,30 +35,22 @@
         </init-param>
         <load-on-startup>2</load-on-startup>
     </servlet>
-    
+        
     <servlet>
       <servlet-name>jersey</servlet-name>
-		<servlet-class>com.sun.jersey.spi.container.servlet.ServletContainer</servlet-class>
+	<servlet-class>com.sun.jersey.spi.container.servlet.ServletContainer</servlet-class>
       <init-param>
         <param-name>jersey.config.server.provider.packages</param-name>
         <param-value>
             io.swagger.jaxrs.listing,
-            eb.test.Hello
+            {your.application.packages}
         </param-value>
       </init-param>
       <load-on-startup>1</load-on-startup>
     </servlet>
-  	<servlet>
-		<servlet-name>Jersey Web Application</servlet-name>
-		<servlet-class>com.sun.jersey.spi.container.servlet.ServletContainer</servlet-class>
-		<init-param>
-		<param-name>jersey.config.server.provider.packages</param-name>
-		<param-value>com.wavelabs.resource,io.swagger.jaxrs.listing</param-value>
-		</init-param>
-		<load-on-startup>1</load-on-startup>
-	</servlet>
-	<servlet-mapping>
-		<servlet-name>Jersey Web Application</servlet-name>
-		<url-pattern>/api/*</url-pattern>
-	</servlet-mapping>  
+
+    <servlet-mapping>
+        <servlet-name>jersey</servlet-name>
+        <url-pattern>/api/*</url-pattern>
+    </servlet-mapping>  
 </web-app>
